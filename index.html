@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zalma Travel — Travel Door to Door, Carter &amp; Sewa Kendaraan Terpercaya</title>
+<meta name="description" content="Zalma Travel melayani travel door to door, carter, rental mobil, drop bandara dan paket wisata dengan armada Hiace, Elf, Bus, hingga mobil pribadi. Aman, nyaman, tepat waktu.">
+<meta name="keywords" content="travel, zalma travel, sewa hiace, carter bus, travel door to door, rental mobil lampung, travel jogja surabaya">
+<meta property="og:title" content="Zalma Travel — Travel Door to Door Terpercaya">
+<meta property="og:description" content="Travel, carter, dan rental kendaraan aman, nyaman, tepat waktu ke seluruh Indonesia.">
+<link rel="icon" href="logo.jpg" type="image/png">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ============ FONT ============ */
+  @font-face{
+    font-family:'BrandFont';
+    src:url('font.OTF') format('opentype');
+    font-weight:400 800;
+    font-display:swap;
+  }
+
+  /* ============ RESET ============ */
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;border:none;cursor:pointer;background:none;}
+  input,textarea,select{font-family:inherit;}
+
+  /* ============ TOKENS ============ */
+  :root{
+    --blue-deep:#0B3D91;
+    --blue-accent:#1E6FD9;
+    --blue-soft:#EAF1FC;
+    --gold:#F5A623;
+    --gold-dark:#D98A0B;
+    --bg:#F7F9FC;
+    --white:#FFFFFF;
+    --ink:#1A2332;
+    --ink-soft:#5B6675;
+    --line:#E3E9F2;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --shadow:0 10px 30px rgba(11,61,145,0.10);
+    --shadow-sm:0 4px 14px rgba(11,61,145,0.08);
+  }
+
+  body{
+    font-family:'BrandFont', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:78px;
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  h1,h2,h3,h4{
+    font-weight:800;
+    line-height:1.2;
+    letter-spacing:0.2px;
+  }
+
+  .eyebrow{
+    font-style:italic;
+    color:var(--blue-accent);
+    font-size:0.98rem;
+    font-weight:600;
+    display:block;
+    margin-bottom:6px;
+    letter-spacing:0.3px;
+  }
+
+  .section-title{
+    font-size:1.55rem;
+    color:var(--blue-deep);
+    margin-bottom:12px;
+  }
+  .section-title .accent{
+    display:inline-block;
+    width:52px;
+    height:4px;
+    background:var(--gold);
+    border-radius:4px;
+    margin-top:10px;
+  }
+
+  .section{
+    padding:52px 0;
+  }
+  .section.alt{
+    background:var(--white);
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.95rem;
+    letter-spacing:0.3px;
+    transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    color:var(--white);
+    box-shadow:0 8px 20px rgba(245,166,35,0.35);
+  }
+  .btn-outline{
+    background:transparent;
+    border:1.5px solid var(--white);
+    color:var(--white);
+  }
+  .btn-block{width:100%;}
+
+  /* ============ LOAD ANIMATION ============ */
+  #loader{
+    position:fixed;inset:0;
+    background:var(--blue-deep);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    transition:opacity .6s ease, visibility .6s ease;
+  }
+  #loader.hide{opacity:0;visibility:hidden;}
+  .loader-logo{
+    width:90px;height:90px;
+    border-radius:22px;
+    overflow:hidden;
+    background:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    animation:pulseLogo 1.1s ease-in-out infinite;
+    box-shadow:0 0 0 0 rgba(255,255,255,0.5);
+  }
+  .loader-logo img{object-fit:contain;padding:10px;}
+  @keyframes pulseLogo{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+  }
+  .loader-bar{
+    width:140px;height:4px;
+    background:rgba(255,255,255,0.2);
+    border-radius:4px;
+    margin-top:22px;
+    overflow:hidden;
+  }
+  .loader-bar::after{
+    content:'';
+    display:block;
+    width:40%;height:100%;
+    background:var(--gold);
+    border-radius:4px;
+    animation:loadSlide 1s ease-in-out infinite;
+  }
+  @keyframes loadSlide{
+    0%{transform:translateX(-100%);}
+    100%{transform:translateX(350%);}
+  }
+  .loader-text{
+    color:var(--white);
+    font-size:0.85rem;
+    letter-spacing:2px;
+    margin-top:14px;
+    opacity:0.85;
+    text-transform:uppercase;
+  }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky;
+    top:0;
+    z-index:500;
+    background:var(--white);
+    box-shadow:0 2px 14px rgba(11,61,145,0.08);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo img{
+    width:42px;height:42px;
+    border-radius:10px;
+    object-fit:contain;
+    background:var(--blue-soft);
+  }
+  .logo-text{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--blue-deep);
+    letter-spacing:0.3px;
+  }
+  .logo-text span{color:var(--gold);}
+
+  .header-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .btn-header{
+    background:var(--gold);
+    color:var(--white);
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.85rem;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .hamburger{
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--blue-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--blue-deep);
+    font-size:1.1rem;
+  }
+
+  /* ============ MOBILE NAV DRAWER ============ */
+  .drawer-overlay{
+    position:fixed;inset:0;
+    background:rgba(11,20,40,0.5);
+    z-index:600;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s ease, visibility .3s ease;
+  }
+  .drawer-overlay.open{opacity:1;visibility:visible;}
+  .drawer{
+    position:fixed;
+    top:0;right:0;
+    width:78%;
+    max-width:320px;
+    height:100%;
+    background:var(--white);
+    z-index:601;
+    transform:translateX(100%);
+    transition:transform .35s ease;
+    padding:24px;
+    overflow-y:auto;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-close{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--blue-soft);
+    color:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    margin-left:auto;
+    margin-bottom:24px;
+    font-size:1.1rem;
+  }
+  .drawer nav ul li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 4px;
+    border-bottom:1px solid var(--line);
+    font-weight:700;
+    color:var(--ink);
+  }
+  .drawer nav ul li a i{
+    color:var(--blue-accent);
+    width:20px;
+    text-align:center;
+  }
+  .drawer-wa{
+    margin-top:24px;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:linear-gradient(180deg,var(--blue-soft) 0%, var(--bg) 100%);
+    padding:36px 0 20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-visual{
+    position:relative;
+    width:100%;
+    max-width:340px;
+    aspect-ratio:1/1.15;
+    margin:0 auto 8px;
+  }
+  .hero-photo{
+    position:absolute;
+    inset:8% 14%;
+    border-radius:180px 180px 24px 24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:4px solid var(--white);
+  }
+  .hero-ring{
+    position:absolute;
+    inset:0;
+    border:2px dashed rgba(30,111,217,0.25);
+    border-radius:50%;
+  }
+  .service-orbit{
+    position:absolute;
+    width:78px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    text-align:center;
+  }
+  .service-orbit .icon-circle{
+    width:56px;height:56px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.25rem;
+    color:var(--white);
+    box-shadow:var(--shadow-sm);
+  }
+  .service-orbit span{
+    font-size:0.68rem;
+    font-weight:700;
+    color:var(--blue-deep);
+    line-height:1.15;
+  }
+  .orbit-1{top:0%;left:-4%;}
+  .orbit-1 .icon-circle{background:var(--blue-deep);}
+  .orbit-2{top:0%;right:-4%;}
+  .orbit-2 .icon-circle{background:var(--gold);}
+  .orbit-3{top:36%;left:-12%;}
+  .orbit-3 .icon-circle{background:var(--gold);}
+  .orbit-4{top:36%;right:-12%;}
+  .orbit-4 .icon-circle{background:var(--blue-deep);}
+  .orbit-5{bottom:-2%;left:50%;transform:translateX(-50%);}
+  .orbit-5 .icon-circle{background:var(--blue-accent);}
+
+  .hero-text{
+    text-align:center;
+    margin-top:20px;
+  }
+  .hero-text h1{
+    font-size:1.9rem;
+    color:var(--blue-deep);
+    margin-bottom:12px;
+  }
+  .hero-text h1 em{
+    font-style:normal;
+    color:var(--gold-dark);
+  }
+  .hero-text p{
+    color:var(--ink-soft);
+    font-size:0.98rem;
+    margin-bottom:22px;
+    padding:0 6px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+  }
+  .btn-hero-outline{
+    background:var(--white);
+    color:var(--blue-deep);
+    border:1.5px solid var(--blue-accent);
+    padding:14px 22px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.95rem;
+  }
+
+  .trust-strip{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:32px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .trust-item{
+    text-align:center;
+    flex:1;
+  }
+  .trust-item .num{
+    font-size:1.25rem;
+    font-weight:800;
+    color:var(--blue-deep);
+  }
+  .trust-item .lbl{
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin-top:2px;
+  }
+
+  /* ============ BOOKING FORM ============ */
+  .booking-card{
+    background:linear-gradient(145deg,var(--blue-deep),#123a7a);
+    border-radius:var(--radius-lg);
+    padding:30px 22px;
+    color:var(--white);
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .booking-card::before{
+    content:'';
+    position:absolute;
+    width:180px;height:180px;
+    background:rgba(245,166,35,0.15);
+    border-radius:50%;
+    top:-70px;right:-60px;
+  }
+  .booking-card .eyebrow{color:var(--gold);}
+  .booking-card h2{color:var(--white);font-size:1.4rem;margin-bottom:20px;position:relative;}
+  .form-field{
+    margin-bottom:14px;
+    position:relative;
+  }
+  .form-field label{
+    display:block;
+    font-size:0.75rem;
+    font-weight:700;
+    margin-bottom:6px;
+    color:rgba(255,255,255,0.85);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:var(--radius-sm);
+    border:none;
+    font-size:0.92rem;
+    color:var(--ink);
+    background:var(--white);
+  }
+  .form-field textarea{resize:none;min-height:88px;}
+  .form-field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%230B3D91' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+  .form-note{
+    font-size:0.75rem;
+    color:rgba(255,255,255,0.7);
+    margin-top:14px;
+    text-align:center;
+  }
+  /* Sembunyikan field pilihan mobil secara default */
+  .field-mobil{
+    display:none;
+  }
+  .field-mobil.show{
+    display:block;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-photo{
+    width:100%;
+    aspect-ratio:16/10;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    margin-bottom:24px;
+  }
+  .about-text p{
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    font-size:0.96rem;
+  }
+  .about-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .about-point{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:10px 12px;
+    font-size:0.8rem;
+    font-weight:700;
+    color:var(--blue-deep);
+  }
+  .about-point i{color:var(--gold-dark);}
+
+  /* ============ SERVICES ============ */
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .service-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:22px 16px;
+    text-align:center;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--line);
+    transition:transform .2s ease;
+  }
+  .service-card:active{transform:scale(0.97);}
+  .service-card .icon{
+    width:52px;height:52px;
+    border-radius:16px;
+    background:var(--blue-soft);
+    color:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;
+    margin:0 auto 12px;
+  }
+  .service-card:nth-child(odd) .icon{background:#FFF3E1;color:var(--gold-dark);}
+  .service-card h3{
+    font-size:0.92rem;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .service-card p{
+    font-size:0.76rem;
+    color:var(--ink-soft);
+  }
+  .service-card.full{grid-column:1/-1;display:flex;align-items:center;text-align:left;gap:16px;}
+  .service-card.full .icon{margin:0;flex-shrink:0;}
+
+  /* ============ ROUTES — BOARDING PASS SIGNATURE ============ */
+  .route-scroller{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    padding:6px 2px 18px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .route-scroller::-webkit-scrollbar{display:none;}
+  .route-card{
+    scroll-snap-align:start;
+    flex:0 0 78%;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .route-card .rc-photo{
+    width:100%;
+    height:130px;
+    position:relative;
+  }
+  .route-card .rc-badge{
+    position:absolute;
+    top:10px;left:10px;
+    background:var(--gold);
+    color:var(--white);
+    font-size:0.68rem;
+    font-weight:800;
+    padding:5px 10px;
+    border-radius:999px;
+    letter-spacing:0.3px;
+  }
+  .rc-body{
+    padding:16px 16px 0;
+  }
+  .rc-route{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:800;
+    color:var(--blue-deep);
+    font-size:1rem;
+    margin-bottom:4px;
+  }
+  .rc-route i{color:var(--gold-dark);font-size:0.8rem;}
+  .rc-meal{
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .rc-perforation{
+    position:relative;
+    height:1px;
+    border-top:2px dashed var(--line);
+    margin:0 -16px;
+  }
+  .rc-perforation::before,.rc-perforation::after{
+    content:'';
+    position:absolute;
+    top:-9px;
+    width:18px;height:18px;
+    border-radius:50%;
+    background:var(--bg);
+  }
+  .rc-perforation::before{left:-9px;}
+  .rc-perforation::after{right:-9px;}
+  .rc-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px 16px;
+  }
+  .rc-price{
+    font-weight:800;
+    color:var(--blue-deep);
+    font-size:1.05rem;
+  }
+  .rc-price small{
+    display:block;
+    font-size:0.65rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .rc-book{
+    background:var(--blue-deep);
+    color:var(--white);
+    padding:9px 16px;
+    border-radius:999px;
+    font-size:0.78rem;
+    font-weight:700;
+    display:flex;align-items:center;gap:6px;
+  }
+  .route-hint{
+    text-align:center;
+    font-size:0.75rem;
+    color:var(--ink-soft);
+    margin-top:-6px;
+  }
+  .route-hint i{color:var(--blue-accent);margin:0 3px;}
+
+  /* ============ FLEET ============ */
+  .fleet-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .fleet-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--line);
+  }
+  .fleet-photo{
+    width:100%;
+    height:110px;
+  }
+  .fleet-info{
+    padding:12px 14px 16px;
+  }
+  .fleet-info h3{
+    font-size:0.9rem;
+    color:var(--blue-deep);
+    margin-bottom:4px;
+  }
+  .fleet-info p{
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+  .fleet-info p i{color:var(--gold-dark);}
+
+  /* ============ WHY US ============ */
+  .why-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .why-item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:18px;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--line);
+  }
+  .why-item .icon{
+    width:48px;height:48px;
+    border-radius:14px;
+    background:var(--blue-deep);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.15rem;
+    flex-shrink:0;
+  }
+  .why-item h3{font-size:0.95rem;color:var(--ink);margin-bottom:4px;}
+  .why-item p{font-size:0.8rem;color:var(--ink-soft);}
+
+  /* ============ GALLERY ============ */
+  .gallery-scroller{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    padding:4px 2px 10px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .gallery-scroller::-webkit-scrollbar{display:none;}
+  .gallery-item{
+    scroll-snap-align:center;
+    flex:0 0 82%;
+    height:230px;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    position:relative;
+  }
+  .gallery-item .cap{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(180deg,transparent,rgba(11,20,40,0.75));
+    color:var(--white);
+    padding:26px 14px 12px;
+    font-size:0.82rem;
+    font-weight:700;
+  }
+  .gallery-nav{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:14px;
+  }
+  .gallery-nav button{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-sm);
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .testi-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:20px;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--line);
+    margin-bottom:14px;
+  }
+  .testi-stars{
+    color:var(--gold);
+    font-size:0.85rem;
+    margin-bottom:10px;
+  }
+  .testi-card p.quote{
+    font-size:0.9rem;
+    color:var(--ink);
+    margin-bottom:14px;
+    font-style:italic;
+  }
+  .testi-who{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .testi-avatar{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--blue-soft);
+    color:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    font-size:0.9rem;
+  }
+  .testi-who .name{font-size:0.85rem;font-weight:700;color:var(--ink);}
+  .testi-who .role{font-size:0.72rem;color:var(--ink-soft);}
+
+  /* ============ FAQ ============ */
+  .faq-item{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    border:1px solid var(--line);
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .faq-q{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 18px;
+    font-weight:700;
+    font-size:0.88rem;
+    color:var(--ink);
+    text-align:left;
+  }
+  .faq-q i{
+    color:var(--blue-accent);
+    transition:transform .25s ease;
+    flex-shrink:0;
+    margin-left:12px;
+  }
+  .faq-item.open .faq-q i{transform:rotate(180deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-a p{
+    padding:0 18px 16px;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .faq-cta{
+    text-align:center;
+    margin-top:20px;
+  }
+  .faq-cta p{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--blue-deep);
+    color:rgba(255,255,255,0.85);
+    padding:44px 0 100px;
+  }
+  .footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .footer-logo img{
+    width:40px;height:40px;
+    border-radius:10px;
+    background:var(--white);
+    object-fit:contain;
+  }
+  .footer-logo span{
+    font-weight:800;
+    font-size:1.1rem;
+    color:var(--white);
+  }
+  footer p.tag{
+    font-size:0.85rem;
+    margin-bottom:24px;
+    color:rgba(255,255,255,0.65);
+  }
+  .footer-block{margin-bottom:26px;}
+  .footer-block h4{
+    color:var(--white);
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:14px;
+  }
+  .footer-contact li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:0.83rem;
+    margin-bottom:12px;
+    color:rgba(255,255,255,0.8);
+  }
+  .footer-contact li i{color:var(--gold);margin-top:3px;}
+  .footer-addr{
+    font-size:0.8rem;
+    color:rgba(255,255,255,0.75);
+    padding-bottom:12px;
+    margin-bottom:12px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-addr:last-child{border-bottom:none;}
+  .social-row{
+    display:flex;
+    gap:10px;
+  }
+  .social-row a{
+    width:40px;height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--white);
+  }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);
+    margin-top:10px;
+    padding-top:20px;
+    text-align:center;
+    font-size:0.75rem;
+    color:rgba(255,255,255,0.6);
+  }
+
+  /* ============ FLOATING WA ============ */
+  .float-wa{
+    position:fixed;
+    right:18px;
+    bottom:90px;
+    width:56px;height:56px;
+    border-radius:50%;
+    background:#25D366;
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;
+    box-shadow:0 8px 20px rgba(37,211,102,0.45);
+    z-index:400;
+    animation:waPulse 2.2s ease-in-out infinite;
+  }
+  @keyframes waPulse{
+    0%,100%{box-shadow:0 8px 20px rgba(37,211,102,0.45);}
+    50%{box-shadow:0 8px 26px rgba(37,211,102,0.7),0 0 0 8px rgba(37,211,102,0.12);}
+  }
+
+  /* ============ STICKY BOTTOM NAV ============ */
+  .bottom-nav{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    background:var(--white);
+    box-shadow:0 -4px 20px rgba(11,61,145,0.12);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:10px 6px 12px;
+    z-index:450;
+  }
+  .bottom-nav a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    font-size:0.65rem;
+    font-weight:700;
+    color:var(--ink-soft);
+    flex:1;
+  }
+  .bottom-nav a i{font-size:1.1rem;}
+  .bottom-nav a.active{color:var(--blue-deep);}
+  .bottom-nav a.center-fab{
+    margin-top:-30px;
+  }
+  .bottom-nav a.center-fab .fab-circle{
+    width:52px;height:52px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--white);
+    font-size:1.3rem;
+    box-shadow:0 8px 18px rgba(245,166,35,0.45);
+    margin-bottom:2px;
+  }
+
+  /* ============ MISC ============ */
+  .section-header-row{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:6px;
+  }
+
+  @media (min-width:400px){
+    .hero-text h1{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <div class="loader-logo"><img src="logo.jpg" alt="Zalma Travel"></div>
+  <div class="loader-bar"></div>
+  <div class="loader-text">Zalma Travel</div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="header-inner">
+    <a href="#beranda" class="logo">
+      <img src="logo.jpg" alt="Logo Zalma Travel">
+      <span class="logo-text">Zalma<span> Travel</span></span>
+    </a>
+    <div class="header-actions">
+      <a href="#booking" class="btn-header"><i class="fa-solid fa-ticket"></i> Booking</a>
+      <button class="hamburger" id="menuOpen" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DRAWER MENU ============ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="menuClose" aria-label="Tutup menu"><i class="fa-solid fa-xmark"></i></button>
+  <nav>
+    <ul>
+      <li><a href="#beranda" class="drawer-link"><i class="fa-solid fa-house"></i> Beranda</a></li>
+      <li><a href="#tentang" class="drawer-link"><i class="fa-solid fa-circle-info"></i> Tentang Kami</a></li>
+      <li><a href="#layanan" class="drawer-link"><i class="fa-solid fa-list-check"></i> Layanan</a></li>
+      <li><a href="#rute" class="drawer-link"><i class="fa-solid fa-route"></i> Rute Populer</a></li>
+      <li><a href="#armada" class="drawer-link"><i class="fa-solid fa-van-shuttle"></i> Armada</a></li>
+      <li><a href="#testimoni" class="drawer-link"><i class="fa-solid fa-comment-dots"></i> Testimoni</a></li>
+      <li><a href="#faq" class="drawer-link"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      <li><a href="#footer" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Kontak</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-gold btn-block drawer-wa" href="https://wa.me/6283197464075" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+  </a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="beranda">
+  <div class="container">
+    <div class="hero-visual">
+      <div class="hero-ring"></div>
+      <div class="hero-photo"><img src="hero.jpg" alt="Driver Zalma Travel siap mengantar penumpang"></div>
+
+      <div class="service-orbit orbit-1">
+        <div class="icon-circle"><i class="fa-solid fa-van-shuttle"></i></div>
+        <span>Travel Reguler</span>
+      </div>
+      <div class="service-orbit orbit-2">
+        <div class="icon-circle"><i class="fa-solid fa-key"></i></div>
+        <span>Carter / Sewa</span>
+      </div>
+      <div class="service-orbit orbit-3">
+        <div class="icon-circle"><i class="fa-solid fa-plane-departure"></i></div>
+        <span>Drop Bandara</span>
+      </div>
+      <div class="service-orbit orbit-4">
+        <div class="icon-circle"><i class="fa-solid fa-car-side"></i></div>
+        <span>Rental Mobil</span>
+      </div>
+      <div class="service-orbit orbit-5">
+        <div class="icon-circle"><i class="fa-solid fa-box"></i></div>
+        <span>Kirim Paket</span>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1>Perjalanan Aman &amp; <em>Nyaman</em> Bersama Zalma Travel</h1>
+      <p>Melayani travel door to door, carter, rental mobil, drop bandara, hingga paket wisata dengan armada terawat dan driver berpengalaman ke berbagai kota di Indonesia.</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn btn-gold"><i class="fa-solid fa-ticket"></i> Pesan Sekarang</a>
+        <a href="#rute" class="btn-hero-outline"><i class="fa-solid fa-route"></i> Lihat Rute</a>
+      </div>
+    </div>
+
+    <div class="trust-strip reveal">
+      <div class="trust-item">
+        <div class="num">20+</div>
+        <div class="lbl">RUTE TERSEDIA</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">6</div>
+        <div class="lbl">PILIHAN ARMADA</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">24/7</div>
+        <div class="lbl">CS SIAP MELAYANI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING FORM ============ -->
+<section class="section" id="booking">
+  <div class="container">
+    <div class="booking-card reveal">
+      <span class="eyebrow">Pemesanan</span>
+      <h2>Isi Data Perjalanan Anda</h2>
+
+      <form id="bookingForm">
+        <div class="form-field">
+          <label for="fname">Nama Lengkap</label>
+          <input type="text" id="fname" placeholder="Masukkan nama lengkap" required>
+        </div>
+        <div class="form-field">
+          <label for="fservice">Jenis Layanan</label>
+          <select id="fservice" required>
+            <option value="" selected disabled>Pilih layanan</option>
+            <option value="Travel Door to Door">Travel Door to Door</option>
+            <option value="Carter / Sewa Kendaraan">Carter / Sewa Kendaraan</option>
+            <option value="Rental Mobil">Rental Mobil</option>
+            <option value="Drop Bandara">Drop Bandara</option>
+            <option value="Kirim Paket">Kirim Paket</option>
+            <option value="Paket Wisata">Paket Wisata</option>
+          </select>
+        </div>
+        <!-- Pilihan Mobil (hanya muncul untuk layanan tertentu) -->
+        <div class="form-field field-mobil" id="fieldMobil">
+          <label for="fmobil">Pilihan Mobil</label>
+          <select id="fmobil">
+            <option value="" selected disabled>Pilih mobil</option>
+            <option value="Big Bus (59 seat)">Big Bus (59 seat)</option>
+            <option value="Medium Bus (31 seat)">Medium Bus (31 seat)</option>
+            <option value="Hiace Commuter (15 seat)">Hiace Commuter (15 seat)</option>
+            <option value="Hiace Premio (10 seat)">Hiace Premio (10 seat)</option>
+            <option value="Innova Reborn (6 seat)">Innova Reborn (6 seat)</option>
+            <option value="All New Xenia FWD (6 seat)">All New Xenia FWD (6 seat)</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="forigin">Kota Asal</label>
+          <input type="text" id="forigin" placeholder="Contoh: Jogja" required>
+        </div>
+        <div class="form-field">
+          <label for="fdest">Kota Tujuan</label>
+          <input type="text" id="fdest" placeholder="Contoh: Surabaya" required>
+        </div>
+        <div class="form-field">
+          <label for="fdate">Tanggal Berangkat</label>
+          <input type="date" id="fdate" required>
+        </div>
+        <div class="form-field">
+          <label for="fpax">Jumlah Penumpang</label>
+          <input type="number" id="fpax" min="1" placeholder="Jumlah penumpang" required>
+        </div>
+        <div class="form-field">
+          <label for="fnote">Catatan Tambahan (Opsional)</label>
+          <textarea id="fnote" placeholder="Misal: alamat penjemputan, kebutuhan khusus, dll."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">
+          <i class="fa-brands fa-whatsapp"></i> Pesan via WhatsApp
+        </button>
+      </form>
+      <p class="form-note">Data Anda akan diteruskan langsung ke WhatsApp admin Zalma Travel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TENTANG KAMI ============ -->
+<section class="section alt" id="tentang">
+  <div class="container">
+    <div class="about-photo reveal"><img src="about.jpg" alt="Armada Zalma Travel"></div>
+    <span class="eyebrow reveal">Tentang Kami</span>
+    <h2 class="section-title reveal">Mitra Perjalanan Terpercaya Sejak Awal Berdiri</h2>
+    <div class="about-text reveal">
+      <p>Zalma Travel hadir sebagai penyedia layanan transportasi door to door yang menghubungkan Lampung Tengah, Magelang, Wonosobo, hingga Sidoarjo dengan berbagai kota tujuan di Indonesia.</p>
+      <p>Dengan armada yang terawat, driver berpengalaman, serta layanan yang mengutamakan ketepatan waktu, kami berkomitmen menjadikan setiap perjalanan Anda aman, nyaman, dan menyenangkan.</p>
+    </div>
+    <div class="about-points reveal">
+      <div class="about-point"><i class="fa-solid fa-shield-halved"></i> Aman &amp; Terpercaya</div>
+      <div class="about-point"><i class="fa-solid fa-clock"></i> Tepat Waktu</div>
+      <div class="about-point"><i class="fa-solid fa-user-tie"></i> Driver Profesional</div>
+      <div class="about-point"><i class="fa-solid fa-tags"></i> Harga Terjangkau</div>
+    </div>
+    <a href="#booking" class="btn btn-gold reveal"><i class="fa-solid fa-arrow-right"></i> Mulai Perjalanan Anda</a>
+  </div>
+</section>
+
+<!-- ============ LAYANAN ============ -->
+<section class="section" id="layanan">
+  <div class="container">
+    <span class="eyebrow reveal">Layanan Kami</span>
+    <h2 class="section-title reveal">Solusi Transportasi Lengkap<span class="accent"></span></h2>
+    <div class="service-grid" style="margin-top:24px;">
+      <div class="service-card reveal">
+        <div class="icon"><i class="fa-solid fa-van-shuttle"></i></div>
+        <h3>Travel Door to Door</h3>
+        <p>Antar jemput langsung dari alamat ke tujuan.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><i class="fa-solid fa-key"></i></div>
+        <h3>Carter Kendaraan</h3>
+        <p>Sewa armada khusus untuk rombongan Anda.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><i class="fa-solid fa-car-side"></i></div>
+        <h3>Rental Mobil</h3>
+        <p>Sewa mobil harian dengan atau tanpa supir.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
+        <h3>Drop Bandara</h3>
+        <p>Antar cepat menuju bandara tepat waktu.</p>
+      </div>
+      <div class="service-card full reveal">
+        <div class="icon"><i class="fa-solid fa-box"></i></div>
+        <div>
+          <h3>Kirim Paket Express</h3>
+          <p>Kirim barang dan dokumen antar kota dengan cepat dan aman bersama armada Zalma Travel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RUTE POPULER ============ -->
+<section class="section alt" id="rute">
+  <div class="container">
+    <span class="eyebrow reveal">Rute Populer</span>
+    <h2 class="section-title reveal">Temukan Rute Perjalanan Anda<span class="accent"></span></h2>
+  </div>
+
+  <div class="route-scroller" id="routeScroller" style="padding-left:20px;padding-right:8px;">
+    <!-- Route cards injected by JS -->
+  </div>
+  <p class="route-hint container">Geser untuk lihat rute lainnya <i class="fa-solid fa-arrow-right-long"></i></p>
+</section>
+
+<!-- ============ ARMADA ============ -->
+<section class="section" id="armada">
+  <div class="container">
+    <span class="eyebrow reveal">Armada Kami</span>
+    <h2 class="section-title reveal">Pilihan Kendaraan Sesuai Kebutuhan<span class="accent"></span></h2>
+    <div class="fleet-grid" style="margin-top:22px;">
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="about.jpg" alt="Big Bus Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>Big Bus</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 59 seat</p>
+        </div>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="mediumbus.jpg" alt="Medium Bus Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>Medium Bus</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 31 seat</p>
+        </div>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="hiacepremio.jpg" alt="Hiace Commuter Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>Hiace Commuter</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 15 seat</p>
+        </div>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="hiacecommuter.jpg" alt="Hiace Premio Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>Hiace Premio</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 10 seat</p>
+        </div>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="innova.jpg" alt="Innova Reborn Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>Innova Reborn</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 6 seat</p>
+        </div>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-photo"><img src="xenia.jpg" alt="All New Xenia FWD Zalma Travel"></div>
+        <div class="fleet-info">
+          <h3>All New Xenia FWD</h3>
+          <p><i class="fa-solid fa-users"></i> Hingga 6 seat</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEUNGGULAN ============ -->
+<section class="section alt" id="keunggulan">
+  <div class="container">
+    <span class="eyebrow reveal">Keunggulan</span>
+    <h2 class="section-title reveal">Mengapa Memilih Zalma Travel<span class="accent"></span></h2>
+    <div class="why-list" style="margin-top:22px;">
+      <div class="why-item reveal">
+        <div class="icon"><i class="fa-solid fa-clock"></i></div>
+        <div><h3>Tepat Waktu</h3><p>Keberangkatan dan kedatangan sesuai jadwal yang dijanjikan.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div><h3>Driver Profesional</h3><p>Berpengalaman, ramah, dan memahami rute perjalanan.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="icon"><i class="fa-solid fa-tags"></i></div>
+        <div><h3>Harga Terjangkau</h3><p>Tarif kompetitif tanpa mengurangi kenyamanan perjalanan.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <div><h3>Door to Door</h3><p>Penjemputan dan pengantaran langsung ke alamat tujuan.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <div class="icon"><i class="fa-solid fa-headset"></i></div>
+        <div><h3>Customer Service</h3><p>Tim CS siap membantu dan merespon cepat setiap hari.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="galeri">
+  <div class="container">
+    <span class="eyebrow reveal">Galeri</span>
+    <h2 class="section-title reveal">Momen Perjalanan Bersama Kami<span class="accent"></span></h2>
+  </div>
+  <div class="gallery-scroller" id="galleryScroller" style="padding-left:20px;">
+    <div class="gallery-item"><img src="gallery1.jpg" alt="Galeri perjalanan Zalma Travel 1"><div class="cap">Armada siap berangkat</div></div>
+    <div class="gallery-item"><img src="gallery2.jpg" alt="Galeri perjalanan Zalma Travel 2"><div class="cap">Sampai Tujuan dengan Selamat</div></div>
+    <div class="gallery-item"><img src="gallery3.jpg" alt="Galeri perjalanan Zalma Travel 3"><div class="cap">Istirahat di Tempat yang Nyaman</div></div>
+    <div class="gallery-item"><img src="gallery4.jpg" alt="Galeri perjalanan Zalma Travel 4"><div class="cap">Perjalanan Rombongan</div></div>
+    <div class="gallery-item"><img src="gallery5.jpg" alt="Galeri perjalanan Zalma Travel 5"><div class="cap">Perjalanan Wisata yang Nyaman</div></div>
+  </div>
+  <div class="gallery-nav">
+    <button id="galPrev" aria-label="Galeri sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+    <button id="galNext" aria-label="Galeri berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ============ TESTIMONI ============ -->
+<section class="section alt" id="testimoni">
+  <div class="container">
+    <span class="eyebrow reveal">Testimoni</span>
+    <h2 class="section-title reveal">Apa Kata Pelanggan Kami<span class="accent"></span></h2>
+
+    <div style="margin-top:22px;">
+      <div class="testi-card reveal">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="quote">Perjalanan Jogja ke Surabaya sangat nyaman, driver ramah dan tepat waktu. Recommended banget!</p>
+        <div class="testi-who">
+          <div class="testi-avatar">R</div>
+          <div><div class="name">Rina Amelia</div><div class="role">Karyawan Swasta</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="quote">Carter medium bus untuk acara kantor, armadanya bersih dan pelayanannya profesional.</p>
+        <div class="testi-who">
+          <div class="testi-avatar">B</div>
+          <div><div class="name">Budi Santoso</div><div class="role">Wiraswasta</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="quote">Booking gampang tinggal WhatsApp, respon admin cepat dan harga sesuai info di website.</p>
+        <div class="testi-who">
+          <div class="testi-avatar">S</div>
+          <div><div class="name">Siti Nurhaliza</div><div class="role">Mahasiswa</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="quote">Rental Innova buat keluarga liburan ke Gunung Kidul, mobil wangi dan supirnya paham jalan.</p>
+        <div class="testi-who">
+          <div class="testi-avatar">A</div>
+          <div><div class="name">Agus Prasetyo</div><div class="role">Pegawai Negeri</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="quote">Kirim paket dari Wonosobo ke Surabaya sampai dengan cepat dan aman, terima kasih Zalma Travel.</p>
+        <div class="testi-who">
+          <div class="testi-avatar">D</div>
+          <div><div class="name">Dewi Lestari</div><div class="role">Ibu Rumah Tangga</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="section-title reveal">Pertanyaan yang Sering Diajukan<span class="accent"></span></h2>
+
+    <div style="margin-top:22px;">
+      <div class="faq-item">
+        <button class="faq-q">Apakah Zalma Travel melayani sistem door to door? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Ya, kami menjemput dan mengantar penumpang langsung dari dan ke alamat tujuan untuk kenyamanan Anda.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Rute apa saja yang tersedia? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Kami melayani rute dari Jakarta, Bandung, Purwokerto, Wonosobo, Magelang, Jogja, hingga Surabaya, Denpasar, dan berbagai kota lainnya.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Armada apa saja yang tersedia? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Tersedia Big Bus, Medium Bus, Hiace Commuter, Hiace Premio, Innova Reborn, dan All New Xenia FWD.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Selain travel, layanan apa saja yang tersedia? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Kami juga melayani carter, rental mobil, drop bandara, kirim paket, serta paket wisata.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Bagaimana cara memesan travel? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Isi formulir booking di website atau hubungi admin kami langsung melalui tombol WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Apakah tersedia layanan setiap hari? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Ya, layanan kami beroperasi setiap hari termasuk akhir pekan dan hari libur.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Bagaimana cara mengetahui harga terbaru? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Harga dapat dilihat pada bagian rute dan paket wisata, atau tanyakan langsung ke admin via WhatsApp.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-cta reveal">
+      <p>Masih ada pertanyaan? Hubungi kami sekarang.</p>
+      <a href="https://wa.me/6283197464075" target="_blank" rel="noopener" class="btn btn-gold"><i class="fa-brands fa-whatsapp"></i> Chat Admin Sekarang</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="Logo Zalma Travel">
+      <span>Zalma Travel</span>
+    </div>
+    <p class="tag">Travel door to door, carter, rental mobil &amp; kirim paket dengan layanan aman, nyaman, dan tepat waktu.</p>
+
+    <div class="footer-block">
+      <h4>Kontak</h4>
+      <ul class="footer-contact">
+        <li><i class="fa-brands fa-whatsapp"></i> 0831-9746-4075</li>
+        <li><i class="fa-solid fa-envelope"></i> zalmatravel1@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-block">
+      <h4>Alamat Kantor</h4>
+      <div class="footer-addr"><i class="fa-solid fa-location-dot"></i> Jl Ki Hajar Dewantara, Dusun VIII Gayabaru 2, Seputih Surabaya, Lampung Tengah</div>
+      <div class="footer-addr"><i class="fa-solid fa-location-dot"></i> Dusun Rejoso, Desa Jambewangi, Secang, Magelang</div>
+      <div class="footer-addr"><i class="fa-solid fa-location-dot"></i> Jl. Kertek - Selomerto, Plobangan, Kec. Selomerto, Wonosobo, Jawa Tengah 56361</div>
+      <div class="footer-addr"><i class="fa-solid fa-location-dot"></i> Perumahan The Sun Garden, Jl. Raya Jaretan No.6 Blok B9, Kec. Wonoayu, Sidoarjo, Jawa Timur</div>
+    </div>
+
+    <div class="footer-block">
+      <h4>Sosial Media</h4>
+      <div class="social-row">
+        <a href="https://wa.me/6283197464075" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Zalma Travel. Seluruh hak cipta dilindungi.<br>Developed By Raju Aji Satrio
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="float-wa" href="https://wa.me/6283197464075" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ============ STICKY BOTTOM NAV ============ -->
+<nav class="bottom-nav">
+  <a href="#beranda" class="active"><i class="fa-solid fa-house"></i>Beranda</a>
+  <a href="#rute"><i class="fa-solid fa-route"></i>Rute</a>
+  <a href="#armada" class="center-fab"><div class="fab-circle"><i class="fa-solid fa-van-shuttle"></i></div></a>
+  <a href="#testimoni"><i class="fa-solid fa-comment-dots"></i>Testimoni</a>
+  <a href="#faq"><i class="fa-solid fa-ellipsis"></i>Lainnya</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- LOAD ANIMATION ---------- */
+  window.addEventListener('load', function(){
+    var loader = document.getElementById('loader');
+    setTimeout(function(){
+      loader.classList.add('hide');
+    }, 700);
+  });
+  setTimeout(function(){
+    var loader = document.getElementById('loader');
+    if(loader) loader.classList.add('hide');
+  }, 2500);
+
+  /* ---------- YEAR ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- DRAWER MENU ---------- */
+  var menuOpen = document.getElementById('menuOpen');
+  var menuClose = document.getElementById('menuClose');
+  var drawer = document.getElementById('drawer');
+  var overlay = document.getElementById('drawerOverlay');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+  menuOpen.addEventListener('click', openDrawer);
+  menuClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.querySelectorAll('.drawer-link').forEach(function(link){
+    link.addEventListener('click', closeDrawer);
+  });
+
+  /* ---------- SCROLL REVEAL ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- ROUTE DATA & RENDER ---------- */
+  var routes = [
+    {from:"Jakarta", to:"Surabaya", price:"Rp500.000", note:"Include makan 1x", img:"jakarta.jpg"},
+    {from:"Jakarta", to:"Denpasar", price:"Rp800.000", note:"Include makan 2x", img:"jakarta.jpg"},
+    {from:"Bandung", to:"Surabaya", price:"Rp650.000", note:"Include makan 1x", img:"bandung.jpg"},
+    {from:"Bandung", to:"Denpasar", price:"Rp850.000", note:"Include makan 2x", img:"bandung.jpg"},
+    {from:"Purwokerto", to:"Semarang", price:"Rp250.000", note:"", img:"purwokerto.jpg"},
+    {from:"Purwokerto", to:"Surabaya", price:"Rp400.000", note:"Include makan 1x", img:"purwokerto.jpg"},
+    {from:"Purwokerto", to:"Denpasar", price:"Rp650.000", note:"Include makan 2x", img:"purwokerto.jpg"},
+    {from:"Wonosobo", to:"Surabaya", price:"Rp350.000", note:"Include makan 1x", img:"wonosobo.jpg"},
+    {from:"Wonosobo", to:"Denpasar", price:"Rp600.000", note:"Include makan 2x", img:"wonosobo.jpg"},
+    {from:"Magelang", to:"Surabaya", price:"Rp350.000", note:"Include makan 1x", img:"magelang.jpg"},
+    {from:"Magelang", to:"Denpasar", price:"Rp550.000", note:"Include makan 2x", img:"magelang.jpg"},
+    {from:"Jogja", to:"Surabaya", price:"Rp300.000", note:"Include makan 1x", img:"jogja.jpg"},
+    {from:"Jogja", to:"Denpasar", price:"Rp550.000", note:"Include makan 2x", img:"jogja.jpg"},
+    {from:"Jogja", to:"Jakarta", price:"Rp350.000", note:"Include makan 1x", img:"jogja.jpg"},
+    {from:"Jogja", to:"Palembang", price:"Rp650.000", note:"Include makan 1x", img:"jogja.jpg"},
+    {from:"Surabaya", to:"Jember", price:"Rp200.000", note:"Include makan 1x", img:"surabaya.jpg"},
+    {from:"Surabaya", to:"Banyuwangi", price:"Rp225.000", note:"Include makan 1x", img:"surabaya.jpg"},
+    {from:"Surabaya", to:"Denpasar", price:"Rp300.000", note:"Include makan 1x", img:"surabaya.jpg"},
+    {from:"Surabaya", to:"Malang", price:"Rp200.000", note:"", img:"surabaya.jpg"}
+  ];
+
+  var scroller = document.getElementById('routeScroller');
+  var frag = document.createDocumentFragment();
+  routes.forEach(function(r){
+    var card = document.createElement('div');
+    card.className = 'route-card';
+    card.innerHTML =
+      '<div class="rc-photo"><img src="'+r.img+'" alt="Rute '+r.from+' ke '+r.to+'"><span class="rc-badge">Reguler</span></div>' +
+      '<div class="rc-body">' +
+        '<div class="rc-route">'+r.from+' <i class="fa-solid fa-arrow-right"></i> '+r.to+'</div>' +
+        '<div class="rc-meal">'+(r.note ? '<i class="fa-solid fa-utensils"></i> '+r.note : '<i class="fa-solid fa-circle-check"></i> Tanpa makan')+'</div>' +
+      '</div>' +
+      '<div class="rc-perforation"></div>' +
+      '<div class="rc-footer">' +
+        '<div class="rc-price">'+r.price+'<small>per orang</small></div>' +
+        '<a class="rc-book" href="https://wa.me/6283197464075?text=Halo%20Zalma%20Travel%2C%20saya%20ingin%20booking%20rute%20'+encodeURIComponent(r.from+' - '+r.to)+'" target="_blank" rel="noopener">Booking <i class="fa-solid fa-arrow-right"></i></a>' +
+      '</div>';
+    frag.appendChild(card);
+  });
+  scroller.appendChild(frag);
+
+  /* ---------- GALLERY SLIDER CONTROLS ---------- */
+  var galScroller = document.getElementById('galleryScroller');
+  var galPrev = document.getElementById('galPrev');
+  var galNext = document.getElementById('galNext');
+  function galScrollBy(dir){
+    var item = galScroller.querySelector('.gallery-item');
+    var gap = 12;
+    var width = item ? item.getBoundingClientRect().width + gap : 260;
+    galScroller.scrollBy({left: dir * width, behavior:'smooth'});
+  }
+  galPrev.addEventListener('click', function(){ galScrollBy(-1); });
+  galNext.addEventListener('click', function(){ galScrollBy(1); });
+
+  /* ---------- FAQ ACCORDION ---------- */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ---------- TOGGLE MOBIL FIELD BERDASARKAN LAYANAN ---------- */
+  var serviceSelect = document.getElementById('fservice');
+  var mobilField = document.getElementById('fieldMobil');
+
+  function toggleMobilField() {
+    var selected = serviceSelect.value;
+    var showMobil = selected !== 'Travel Door to Door' && selected !== 'Kirim Paket' && selected !== '';
+    if (showMobil) {
+      mobilField.classList.add('show');
+    } else {
+      mobilField.classList.remove('show');
+      document.getElementById('fmobil').value = '';
+    }
+  }
+
+  serviceSelect.addEventListener('change', toggleMobilField);
+  // Trigger on page load to set initial state
+  toggleMobilField();
+
+  /* ---------- BOOKING FORM -> WHATSAPP ---------- */
+  var bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = document.getElementById('fname').value.trim();
+    var service = document.getElementById('fservice').value;
+    var mobil = document.getElementById('fmobil').value;
+    var origin = document.getElementById('forigin').value.trim();
+    var dest = document.getElementById('fdest').value.trim();
+    var date = document.getElementById('fdate').value;
+    var pax = document.getElementById('fpax').value.trim();
+    var note = document.getElementById('fnote').value.trim();
+
+    // Validasi field wajib
+    if(!name || !service || !origin || !dest || !date || !pax){
+      alert('Mohon lengkapi semua field yang wajib diisi (Nama, Layanan, Kota Asal, Kota Tujuan, Tanggal, dan Jumlah Penumpang).');
+      return;
+    }
+
+    // Validasi pilihan mobil jika layanan membutuhkan
+    var showMobil = service !== 'Travel Door to Door' && service !== 'Kirim Paket';
+    if(showMobil && !mobil){
+      alert('Mohon pilih mobil untuk layanan yang Anda pilih.');
+      return;
+    }
+
+    // Format pesan WhatsApp
+    var text = "Halo Zalma Travel, saya ingin melakukan pemesanan:%0A" +
+               "%0A" +
+               "📌 *Data Pemesanan*%0A" +
+               "• Nama Lengkap : " + encodeURIComponent(name) + "%0A" +
+               "• Layanan     : " + encodeURIComponent(service) + "%0A";
+
+    if(showMobil && mobil) {
+      text += "• Pilihan Mobil: " + encodeURIComponent(mobil) + "%0A";
+    }
+
+    text += "• Kota Asal   : " + encodeURIComponent(origin) + "%0A" +
+            "• Kota Tujuan : " + encodeURIComponent(dest) + "%0A" +
+            "• Tanggal     : " + encodeURIComponent(date) + "%0A" +
+            "• Penumpang   : " + encodeURIComponent(pax) + " orang%0A";
+
+    if(note) {
+      text += "• Catatan     : " + encodeURIComponent(note) + "%0A";
+    }
+
+    text += "%0A" +
+            "Mohon dibantu konfirmasi ketersediaan dan total biayanya. Terima kasih.";
+
+    window.open("https://wa.me/6283197464075?text=" + text, "_blank");
+  });
+
+  /* ---------- BOTTOM NAV ACTIVE STATE ---------- */
+  var navLinks = document.querySelectorAll('.bottom-nav a[href^="#"]');
+  var sections = ['beranda','rute','armada','testimoni','faq'].map(function(id){
+    return document.getElementById(id);
+  });
+  window.addEventListener('scroll', function(){
+    var scrollPos = window.scrollY + 160;
+    var currentId = 'beranda';
+    sections.forEach(function(sec){
+      if(sec && sec.offsetTop <= scrollPos){
+        currentId = sec.id;
+      }
+    });
+    navLinks.forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('href') === '#'+currentId);
+    });
+  }, {passive:true});
+
+})();
+</script>
+
+</body>
+</html>
